@@ -6,7 +6,7 @@
 #include "matrix.h"
 #include "solvers.h"
 
-// #ifdef COMMON_WITH_SUPERLU
+#ifdef COMMON_WITH_SUPERLU
 #include <superlu/slu_ddefs.h>
 
 bool CommonSolverSuperLU::solve(Matrix *mat, double *res)
@@ -132,7 +132,7 @@ bool CommonSolverSuperLU::solve(Matrix *mat, cplx *res)
 {
     _error("CommonSolverSuperLU::solve(Matrix *mat, cplx *res) not implemented.");
 }
-/*
+
 #else
 
 bool CommonSolverSuperLU::solve(Matrix *mat, double *res)
@@ -146,4 +146,3 @@ bool CommonSolverSuperLU::solve(Matrix *mat, cplx *res)
 }
 
 #endif
-*/

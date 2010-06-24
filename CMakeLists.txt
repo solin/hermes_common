@@ -5,8 +5,8 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 # optional functionality
 set(COMMON_WITH_SCIPY YES)
-set(COMMON_WITH_UMFPACK YES)
-set(COMMON_WITH_SUPERLU YES)
+set(COMMON_WITH_UMFPACK NO)
+set(COMMON_WITH_SUPERLU NO)
 
 find_package(PythonLibs REQUIRED)
 find_package(NumPy REQUIRED)

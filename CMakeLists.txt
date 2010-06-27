@@ -8,6 +8,11 @@ set(COMMON_WITH_SCIPY YES)
 set(COMMON_WITH_UMFPACK NO)
 set(COMMON_WITH_SUPERLU NO)
 
+# allow to override the default values in CMake.vars
+if(EXISTS ${PROJECT_SOURCE_DIR}/CMake.vars)
+	include(CMake.vars)
+endif(EXISTS ${PROJECT_SOURCE_DIR}/CMake.vars)
+
 find_package(PythonLibs REQUIRED)
 find_package(NumPy REQUIRED)
 

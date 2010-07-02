@@ -5,13 +5,8 @@ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake)
 
 # optional functionality
 set(COMMON_WITH_SCIPY YES)
-set(COMMON_WITH_UMFPACK NO)
+set(COMMON_WITH_UMFPACK YES)
 set(COMMON_WITH_SUPERLU NO)
-
-# allow to override the default values in CMake.vars
-if(EXISTS ${PROJECT_SOURCE_DIR}/CMake.vars)
-	include(CMake.vars)
-endif(EXISTS ${PROJECT_SOURCE_DIR}/CMake.vars)
 
 find_package(PythonLibs REQUIRED)
 find_package(NumPy REQUIRED)
@@ -41,7 +36,22 @@ set(SRC
     superlu_solver.cpp
     sparselib_solver.cpp
     common_time_period.cpp
-    )
+#    matrix_solvers/amesos.cpp
+#    matrix_solvers/aztecoo.cpp
+#    matrix_solvers/epetra.cpp
+#    matrix_solvers/mumps.cpp
+#    matrix_solvers/nox.cpp
+#    matrix_solvers/pardiso.cpp
+    matrix_solvers/petsc.cpp
+    matrix_solvers/umfpack.cpp
+    matrix_solvers/common_matrix.cpp
+    matrix_solvers/common/callstack.cpp
+    matrix_solvers/common/error.cpp
+    matrix_solvers/common/qsort.cpp
+    matrix_solvers/common/timer.cpp
+    matrix_solvers/common/trace.cpp
+    matrix_solvers/common/utils.cpp
+)
 
 add_library(${HERMES_COMMON} SHARED ${SRC})
 

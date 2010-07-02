@@ -185,5 +185,4 @@ bool CommonSolverUmfpack::solve(Matrix *mat, cplx *res)
 {
     _error("CommonSolverUmfpack::solve(Matrix *mat, cplx *res) not implemented.");
 }
-
 #endif
